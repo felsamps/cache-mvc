@@ -47,7 +47,4 @@ class ConfigFile:
 	
 	def printDbg(self):
 		print self.frameW, self.frameH, self.blockW, self.blockH, self.setSize, self.numBlocks, self.rows, self.columns
-			
-if __name__ == "__main__":
-	configFile = ConfigFile("/home/felsamps/NetBeansProjects/CacheMVC/src/template.cfg")
-	configFile.printDbg()
+
