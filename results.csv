@@ -1,0 +1,3 @@
+block_size,set,n_blocks,mapping,order,bma,total_access,hits,hits(%),misses,misses(%),block_size(bits),cache_size(bits),accessed_samples
+16x16,1,4,2x2,0,/home/felsamps/Tcc/cache-mvc/inDiamondTZ.txt,2497440,2330564,93.3181177526,166876,6.68188224742,2048,8192,341762048
+20x20,1,4,2x2,0,/home/felsamps/Tcc/cache-mvc/inDiamondTZ.txt,2587200,2457020,94.968305504,130180,5.03169449598,3200,12800,416576000

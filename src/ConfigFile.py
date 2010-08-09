@@ -3,11 +3,24 @@ __date__ ="$16/07/2010 15:34:56$"
 
 class ConfigFile:
 	def __init__(self, fileName):
-		self.fp = open(fileName)
-		self.__parseFile()
+		self.fileName = fileName
+		print "Config file opened..."
 
-	def __parseFile(self):
+	def initConfigs(self, frameW, frameH, blockW, blockH, setSize, numBlocks, rows, columns, order, bma):
+		self.frameW = frameW
+		self.frameH = frameH
+		self.blockW = blockW
+		self.blockH = blockH
+		self.setSize = setSize
+		self.numBlocks = numBlocks
+		self.rows = rows
+		self.columns = columns
+		self.order = order
+		self.bma = bma
+	
+	def parseFile(self):
 		"""Parser the config file"""
+		self.fp = open(self.fileName)
 		readBuff = self.fp.readlines()
 		for line in readBuff:
 			splitted = line.split()
@@ -27,7 +40,11 @@ class ConfigFile:
 				self.rows= int(splitted[2])
 			if line.find("COLUMNS") != -1:
 				self.columns = int(splitted[2])
+			if line.find("MB_ORDER") != -1:
+				self.order = int(splitted[2])
 
+	def getMbOrder(self):
+		return self.order
 	def getFrameW(self):
 		return self.frameW
 	def getFrameH(self):
@@ -44,7 +61,5 @@ class ConfigFile:
 		return self.rows
 	def getColumns(self):
 		return self.columns
-	
-	def printDbg(self):
-		print self.frameW, self.frameH, self.blockW, self.blockH, self.setSize, self.numBlocks, self.rows, self.columns
-
+	def getBma(self):
+		return self.bma
