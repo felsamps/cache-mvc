@@ -39,7 +39,7 @@ class Cache:
 			for block in pos:
 				x = block % blocksW
 				y = block / blocksW
-				matrix[y][x] = "X"
+				matrix[y][x] = block
 
 		for line in matrix:
 			print line

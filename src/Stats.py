@@ -57,8 +57,8 @@ class Stats:
 		print "CACHE POSITION SIZE:", str(self.blockSizeInBits)+" bits", str(self.blockSizeInBits/1024.0)+" Kbits"
 		print "CACHE SIZE:", str(self.cacheSizeInBits)+" bits",  str(self.cacheSizeInBits/1024.0)+ " Kbits"
 		print "REQUIRED SAMPLES:", self.samples
-		print "SEARCH RANGE BASED SAMPLES:", self.samplesSRBased
-		print "ACCESSED SAMPLES:", self._calculateAccessedSamples()
+		print "SEARCH RANGE SAM:\t", self.samplesSRBased
+		print "ACCESSED SAMPLES:\t", self._calculateAccessedSamples()
 
 	def printHeader(self, fp):
 		line = "block_size,set,n_blocks,mapping,order,bma,total_access,hits,hits(%),misses,misses(%),block_size(bits),cache_size(bits),accessed_samples"

@@ -61,9 +61,9 @@ class SearchEngine:
 		order.append([1,0])
 		order.append([1,1])
 		for j in range(0, self.height/16, 2):
-			for i in range(0, self.height/16, 2):
+			for i in range(0, self.width/16, 2):
 				for k in range(0, 4):
-					self.mbOrder.append([j+order[k][0], i+order[k][1]])
+					self.mbOrder.append([i+order[k][0], j+order[k][1]])
 
 	def _HF3V2Order(self): #REFS CHEN, 2006: IEEE TCSVT
 		m = 3
@@ -89,9 +89,10 @@ class SearchEngine:
 					self.mmu.performAccessBlock(access)
 				else:
 					self.stats.addOutOfFramesBlock(1)
-			#self.mmu.printCache()
-			#a = sys.stdin.read(1)
-		#self.mmu.report()
+
+#			self.mmu.printCache()
+#			a = sys.stdin.read(1)
+		self.mmu.report()
 
 	def _isValidAccess(self, access):
 		if access[0] < 0 or access[1] < 0 or (access[0]+access[2]) > self.width or (access[1]+access[3] > self.height):
